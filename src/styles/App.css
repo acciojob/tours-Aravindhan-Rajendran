@@ -1,12 +1,68 @@
-h1 {
-    color: #27aedb;
-    text-align: center;
-    }
-    
+.app {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
 
-button{
-    color: #27aedb;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+.loading {
+  text-align: center;
+}
+
+.no-tours {
+  text-align: center;
+}
+
+.tours {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.tour {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tour-image {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.tour-name {
+  font-size: 1.5em;
+  margin: 10px 0;
+}
+
+.tour-info {
+  font-size: 1em;
+  margin: 10px 0;
+}
+
+.show-more-button, .delete-button {
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.delete-button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.show-more-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.tour-price {
+  font-size: 1.2em;
+  margin: 10px 0;
 }
