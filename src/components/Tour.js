@@ -9,30 +9,24 @@ const Tour = ({ tour, onDelete }) => {
   };
 
   return (
-    <div className="tour">
+    <div className="tour-item">
       <h2>{tour.name}</h2>
       <img src={tour.image} alt={tour.name} />
-      <p>
+      <p id={`tour-item-para-${tour.id}`}>
         {isExpanded ? tour.info : `${tour.info.substring(0, 200)}...`}
-        <button onClick={handleToggle}>
-          {isExpanded ? 'See less' : 'Show more'}
-        </button>
       </p>
-      <p>Price: ${tour.price}</p>
-      <button onClick={() => onDelete(tour.id)} className="delete-button">Delete</button>
-          <p id={`tour-item-para-${tour.id}`}>
-  {isExpanded ? tour.info : `${tour.info.substring(0, 200)}...`}
-  <button onClick={handleToggle}>
-    {isExpanded ? 'See less' : 'Show more'}
-  </button>
-</p>
-    <button
-  id={`delete-btn-${tour.id}`}
-  onClick={() => onDelete(tour.id)}
-  className="delete-button"
->
-  Delete
-</button>
+      <button
+        id={`see-more-${tour.id}`}
+        onClick={handleToggle}
+      >
+        {isExpanded ? 'See less' : 'Show more'}
+      </button>
+      <button
+        id={`delete-btn-${tour.id}`}
+        onClick={() => onDelete(tour.id)}
+      >
+        Delete
+      </button>
     </div>
   );
 };
