@@ -19,7 +19,7 @@ const Tour = ({ tour, onDelete }) => {
         id={`see-more-${tour.id}`}
         onClick={handleToggle}
       >
-        {isExpanded ? 'See less' : 'Show more'}
+        {isExpanded ? 'See less' : 'See more'}
       </button>
       <button
         id={`delete-btn-${tour.id}`}
