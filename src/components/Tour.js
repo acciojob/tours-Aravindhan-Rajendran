@@ -20,16 +20,21 @@ const Tour = ({ tour, onDelete }) => {
       </p>
       <p>Price: ${tour.price}</p>
       <button onClick={() => onDelete(tour.id)} className="delete-button">Delete</button>
-    </div>
-  );
-<button
+          <p id={`tour-item-para-${tour.id}`}>
+  {isExpanded ? tour.info : `${tour.info.substring(0, 200)}...`}
+  <button onClick={handleToggle}>
+    {isExpanded ? 'See less' : 'Show more'}
+  </button>
+</p>
+    <button
   id={`delete-btn-${tour.id}`}
   onClick={() => onDelete(tour.id)}
   className="delete-button"
 >
   Delete
 </button>
-
+    </div>
+  );
 };
 
 export default Tour;
