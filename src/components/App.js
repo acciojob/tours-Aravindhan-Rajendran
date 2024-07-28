@@ -66,13 +66,13 @@ const App = () => {
     </div>
   );
 
-  return (
-    <div className="app">
-      {tours.map(tour => (
-        <Tour key={tour.id} tour={tour} onDelete={handleDelete} />
-      ))}
-    </div>
-  );
+return (
+  <div id="main" className="app">
+    {tours.map(tour => (
+      <Tour key={tour.id} tour={tour} onDelete={handleDelete} />
+    ))}
+  </div>
+);
 };
 
 export default App;
