@@ -1,25 +1,25 @@
-// Tour.js
+// src/Tour.js
 import React, { useState } from 'react';
 
-const Tour = ({ id, name, info, image, price, onDelete }) => {
-  const [showMore, setShowMore] = useState(false);
+const Tour = ({ tour, onDelete }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const handleToggle = () => {
-    setShowMore(!showMore);
+    setIsExpanded(!isExpanded);
   };
 
   return (
     <div className="tour">
-      <img src={image} alt={name} className="tour-image" />
-      <h2 className="tour-name">{name}</h2>
-      <p className="tour-info">
-        {showMore ? info : `${info.substring(0, 200)}...`}
-        <button onClick={handleToggle} className="show-more-button">
-          {showMore ? 'See less' : 'Show more'}
+      <h2>{tour.name}</h2>
+      <img src={tour.image} alt={tour.name} />
+      <p>
+        {isExpanded ? tour.info : `${tour.info.substring(0, 200)}...`}
+        <button onClick={handleToggle}>
+          {isExpanded ? 'See less' : 'Show more'}
         </button>
       </p>
-      <p className="tour-price">${price}</p>
-      <button onClick={() => onDelete(id)} className="delete-button">Delete</button>
+      <p>Price: ${tour.price}</p>
+      <button onClick={() => onDelete(tour.id)} className="delete-button">Delete</button>
     </div>
   );
 };
