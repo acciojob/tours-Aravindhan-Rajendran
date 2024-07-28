@@ -22,6 +22,14 @@ const Tour = ({ tour, onDelete }) => {
       <button onClick={() => onDelete(tour.id)} className="delete-button">Delete</button>
     </div>
   );
+<button
+  id={`delete-btn-${tour.id}`}
+  onClick={() => onDelete(tour.id)}
+  className="delete-button"
+>
+  Delete
+</button>
+
 };
 
 export default Tour;
